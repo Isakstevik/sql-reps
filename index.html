@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL Reps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { var t = JSON.parse(localStorage.getItem('sqlreps.v1') || '{}').theme; if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <button id="btn-list" class="icon-btn" title="All exercises (L)" aria-label="All exercises">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
+    </button>
+    <div class="brand">SQL <span>Reps</span></div>
+    <div class="seg" id="mode-seg" role="tablist">
+      <button data-mode="path" role="tab">Path</button>
+      <button data-mode="practice" role="tab">Practice</button>
+    </div>
+    <div class="spacer"></div>
+    <div class="stats">
+      <div class="stat" id="stat-today" title="Correct submissions today vs. daily goal"></div>
+      <div class="stat" id="stat-streak" title="Days in a row with at least one correct submission"></div>
+      <div class="stat hide-sm" id="stat-solved" title="Exercises solved without revealing the solution"></div>
+    </div>
+    <button id="btn-progress" class="btn ghost sm">Progress</button>
+    <button id="btn-theme" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg>
+    </button>
+  </header>
+
+  <div id="filters" class="filters" hidden></div>
+
+  <main class="layout">
+    <section class="work">
+      <div id="exercise" class="exercise"></div>
+      <div class="editor-card">
+        <textarea id="editor"></textarea>
+        <div class="toolbar">
+          <button id="btn-run" class="btn">Run <kbd class="mod-run"></kbd></button>
+          <button id="btn-submit" class="btn primary">Submit <kbd class="mod-submit"></kbd></button>
+          <button id="btn-hint" class="btn ghost">Hint</button>
+          <button id="btn-solution" class="btn ghost">Solution</button>
+          <span class="spacer"></span>
+          <span class="tip hide-sm">Tab to autocomplete</span>
+          <span id="timer" class="timer"></span>
+        </div>
+      </div>
+      <div id="output" class="output"></div>
+    </section>
+    <aside id="schema" class="schema"></aside>
+  </main>
+
+  <div id="drawer-backdrop" class="backdrop" hidden></div>
+  <nav id="drawer" class="drawer" hidden></nav>
+
+  <div id="modal-backdrop" class="backdrop" hidden></div>
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true"></div>
+
+  <div id="loading" class="loading">
+    <div class="loading-inner">
+      <div class="brand big">SQL <span>Reps</span></div>
+      <div id="loading-text">Starting PostgreSQL…</div>
+      <div class="bar"><div></div></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/sql/sql.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/sql-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/display/placeholder.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
