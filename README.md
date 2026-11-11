@@ -7,7 +7,7 @@
 Runs entirely in your browser. No sign-up, no install, no backend.
 
 <!-- Add a screenshot: upload screenshot.png to the repo and uncomment the line below -->
-<!-- ![SQL Reps screenshot](screenshot.png) -->
+![SQL Reps screenshot](screenshot.png) 
 
 ---
 
