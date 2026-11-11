@@ -6,6 +6,8 @@
 
 Runs entirely in your browser. No sign-up, no install, no backend.
 
+Works on Windows, Mac and iPhone/Android in any modern browser (Chrome, Edge, Safari, Firefox). It's best on a computer with a keyboard, but the phone version is handy for a quick rep on the go.
+
 
 ![SQL Reps screenshot](screenshot.png) 
 
