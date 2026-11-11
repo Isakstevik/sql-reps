@@ -2,7 +2,7 @@
 
 **Volume training for SQL — from simple SELECTs to window functions and real business cases.**
 
-### ▶ [Open the app](https://YOUR-USERNAME.github.io/sql-reps/)
+### ▶ [Open the app](https://Isakstevik.github.io/sql-reps/)
 
 Runs entirely in your browser. No sign-up, no install, no backend.
 
